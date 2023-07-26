@@ -21,7 +21,7 @@ app.get("/",(req,res) => {
 
 
 app.use("/user",userRouter);
-app.use("/employees",employeeRouter);
+app.use("/employees",auth, employeeRouter);
 
 app.listen(process.env.PORT, async() => {
     try{
